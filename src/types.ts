@@ -12,6 +12,7 @@ export interface CodeStrip {
 
 export interface Body {
     declarations:CodeStrip
+    on_awake:CodeStrip
     on_enter:CodeStrip
     on_frame:CodeStrip
     on_exit:CodeStrip
