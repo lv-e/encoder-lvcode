@@ -11,11 +11,12 @@ export interface CodeStrip {
 }
 
 export interface Body {
-    declarations:CodeStrip
-    on_awake:CodeStrip
-    on_enter:CodeStrip
-    on_frame:CodeStrip
-    on_exit:CodeStrip
+    declarations:CodeStrip | null
+    on_awake:CodeStrip | null
+    on_enter:CodeStrip | null
+    on_frame:CodeStrip | null
+    on_exit:CodeStrip  | null
+    globals:CodeStrip  | null
 }
 
 export interface LVCodeFile {
