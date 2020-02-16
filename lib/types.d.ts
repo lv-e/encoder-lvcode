@@ -5,7 +5,7 @@ export interface Header {
     version: SemVer;
 }
 export interface CodeStrip {
-    code: string;
+    code: string[];
 }
 export interface Body {
     declarations: CodeStrip | null;

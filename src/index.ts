@@ -36,12 +36,12 @@ if (semver.lt(data.header.version, baseline)) {
 
 // STEP: generate output based on flavor
 let encode:encoded = {
-    declarations: data.body.declarations?.code || "",
-    on_awake: data.body.on_awake?.code || "",
-    on_enter: data.body.on_enter?.code || "",
-    on_frame: data.body.on_frame?.code || "",
-    on_exit: data.body.on_exit?.code || "",
-    globals: data.body.globals?.code || "",
+    declarations: data.body.declarations?.code.join("\n") || "",
+    on_awake: data.body.on_awake?.code.join("\n") || "",
+    on_enter: data.body.on_enter?.code.join("\n") || "",
+    on_frame: data.body.on_frame?.code.join("\n") || "",
+    on_exit: data.body.on_exit?.code.join("\n") || "",
+    globals: data.body.globals?.code.join("\n") || "",
 }
 
 // STEP: write response to file

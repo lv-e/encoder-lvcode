@@ -7,7 +7,7 @@ export interface Header {
 }
 
 export interface CodeStrip {
-    code:string
+    code:string[]
 }
 
 export interface Body {
