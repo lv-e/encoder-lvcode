@@ -30,10 +30,10 @@
     "semver": "7.x"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.3",
+    "@types/jest": "^25.x",
     "@types/node": "^13.x",
-    "jest": "^26.0.1",
-    "ts-jest": "^26.1.0",
+    "jest": "^25.x",
+    "ts-jest": "^25.x",
     "ts-node": "^8.x",
     "typescript": "^3.9.3"
   }

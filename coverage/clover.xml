@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1590959981656" clover="3.2.0">
-  <project timestamp="1590959981656" name="All files">
+<coverage generated="1590960793218" clover="3.2.0">
+  <project timestamp="1590960793218" name="All files">
     <metrics statements="25" coveredstatements="25" conditionals="12" coveredconditionals="12" methods="6" coveredmethods="6" elements="43" coveredelements="43" complexity="0" loc="25" ncloc="25" packages="1" files="2" classes="2"/>
     <file name="encoder.ts" path="/Users/lv/Github/encoder-lvcode/src/encoder.ts">
       <metrics statements="10" coveredstatements="10" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
