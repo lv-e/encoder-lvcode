@@ -4,14 +4,16 @@ import fs, { readFileSync } from 'fs';
 import * as lv from "@lv-game-editor/lv-cli"
 
 test("create subdirs",  () =>{
-    fs.rmdirSync("/tmp/foo/bar/", { recursive: true})
+    if (fs.existsSync("/tmp/foo/bar/"))
+        fs.rmdirSync("/tmp/foo/bar/", { recursive: true})
     createSubdirs("/tmp/foo/bar/file")
     expect(fs.existsSync("/tmp/foo/bar/")).toBe(true)
 })
 
 test("create subdirs when one already exists",  () =>{    
     expect( () => {
-        fs.rmdirSync("/tmp/foo/bar/", { recursive: true})
+        if (fs.existsSync("/tmp/foo/bar/"))
+            fs.rmdirSync("/tmp/foo/bar/", { recursive: true})
         createSubdirs("/tmp/foo/bar/file")
         createSubdirs("/tmp/foo/bar/file")
     }).not.toThrowError()
