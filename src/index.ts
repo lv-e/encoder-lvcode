@@ -41,7 +41,7 @@ let encode:encoded = {
     on_enter: data.body.on_enter?.code.join("\n") || "",
     on_frame: data.body.on_frame?.code.join("\n") || "",
     on_exit: data.body.on_exit?.code.join("\n") || "",
-    globals: data.body.globals?.code.join("\n") || "",
+    include_directive: null
 }
 
 // STEP: write response to file

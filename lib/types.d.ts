@@ -13,7 +13,6 @@ export interface Body {
     on_enter: CodeStrip | null;
     on_frame: CodeStrip | null;
     on_exit: CodeStrip | null;
-    globals: CodeStrip | null;
 }
 export interface LVCodeFile {
     header: Header;
