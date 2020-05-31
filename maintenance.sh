@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 echo "hi! this is lv encoder for > lvcode < file's mantenance script"
 
@@ -45,19 +46,16 @@ publish(){
 
 rebuild(){
     rm -rf ./lib
-    tsc -p . && node .
+    tsc -p .
 }
 
-dryrun(){
+test(){
+
     echo "cleaning and rebuilding..."
     rebuild
-    rm -rf /tmp/lv-dryrun-cli/
 
-    echo "assuming that there's a project at /tmp/lv-dryrun..."
-    node . verbose scan -i /tmp/lv-dryrun -o /tmp/lv-dryrun-cli/scan/structure.json
-    node . verbose encode -i /tmp/lv-dryrun-cli/scan/structure.json -o /tmp/lv-dryrun-cli/encode
-    node . verbose build -i /lv/script/build/build.sh -o /lv/bin/game.bin
-    open /tmp/lv-dryrun-cli/
+    echo "running all tests using jest"
+    NODE_OPTIONS=--trace-warnings yarn jest --coverage 
 }
 
 ## what should we do?
@@ -66,12 +64,12 @@ dryrun(){
 
         echo "available options are:"
         echo "1) publish"
-        echo "2) dryrun"
+        echo "2) run tests"
         read -p "choose one: " opt; echo "--"
 
         case $opt in
             1) publish; break;;
-            2) dryrun; break;;
+            2) test; break;;
             * ) echo "ok! bye."; exit;;
         esac
 done
